@@ -18,9 +18,6 @@ const ModalOverlay = (props) => {
 const parentElement = document.getElementById("overlays");
 
 const Modal = (props) => {
-  const printLog = () => {
-    console.log("Clicked!");
-  };
   return (
     <Fragment>
       {ReactDOM.createPortal(

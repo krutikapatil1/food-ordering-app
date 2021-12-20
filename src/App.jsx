@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import Header from "./components/Layout/Header.jsx";
-import React, { useState, Fragment } from "react";
+import React from "react";
 import Meals from "./components/Meals/Meals.jsx";
 import Cart from "./components/Cart/Cart";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [cartIsShown, setCartIsShown] = React.useState(false);
@@ -16,11 +16,11 @@ function App() {
   };
 
   return (
-    <Fragment>
+    <CartProvider>
       {cartIsShown && <Cart onHideCart={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <Meals />
-    </Fragment>
+    </CartProvider>
   );
 }
 
